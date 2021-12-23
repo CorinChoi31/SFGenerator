@@ -1,0 +1,11 @@
+C:\Users\corin\Desktop\SFGenerator.pdb
+C:\Users\corin\Desktop\clrcompression.dll
+C:\Users\corin\Desktop\clrjit.dll
+C:\Users\corin\Desktop\coreclr.dll
+C:\Users\corin\Desktop\mscordaccore.dll
+C:\Users\corin\Desktop\D3DCompiler_47_cor3.dll
+C:\Users\corin\Desktop\PenImc_cor3.dll
+C:\Users\corin\Desktop\PresentationNative_cor3.dll
+C:\Users\corin\Desktop\vcruntime140_cor3.dll
+C:\Users\corin\Desktop\wpfgfx_cor3.dll
+C:\Users\corin\Desktop\SFGenerator.exe

@@ -1,0 +1,5 @@
+C:\Users\corin\Desktop\SFGenerator.exe
+C:\Users\corin\Desktop\SFGenerator.dll
+C:\Users\corin\Desktop\SFGenerator.deps.json
+C:\Users\corin\Desktop\SFGenerator.runtimeconfig.json
+C:\Users\corin\Desktop\SFGenerator.pdb
