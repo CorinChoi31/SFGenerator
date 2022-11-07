@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SFGenerator
 {
@@ -150,11 +151,16 @@ namespace SFGenerator
 
             Label_Preview.Text = string.Format("{0} Frames ({1}×{2} | {3}×{4})", text.Length, (space_h * 2) + size.Width, (space_v * 2) + size.Height, width, height);
 
-            Button_ExportPNG.Enabled = true;
+            Button_ExportSprite.Enabled = true;
             Button_ExportGlyph.Enabled = true;
 
             result_text = text;
             result_font = font;
+            if(result_bitmap != null)
+            {
+                result_bitmap.Dispose();
+                result_bitmap = null;
+            }
             result_bitmap = bitmap;
         }
 
@@ -179,7 +185,7 @@ namespace SFGenerator
                 string[] filepaths = OpenFileDialog_Glyphs.FileNames;
                 foreach (var filepath in filepaths)
                 {
-                    string text = System.IO.File.ReadAllText(filepath);
+                    string text = File.ReadAllText(filepath);
 
                     TextBox_Glyphs.Text += text;
                 }
@@ -209,13 +215,6 @@ namespace SFGenerator
                 if (!TextBox_Glyphs.Text.Contains(c))
                 {
                     int i = 0;
-                    for (i = 0; i < TextBox_Glyphs.Text.Length; i++)
-                    {
-                        if (c.CompareTo(TextBox_Glyphs.Text.Substring(i, 1)) <= 0)
-                        {
-                            break;
-                        }
-                    }
                     TextBox_Glyphs.Text = TextBox_Glyphs.Text.Insert(i, c);
                 }
                 text = text.Replace(c, "");
@@ -263,21 +262,111 @@ namespace SFGenerator
 
                 if (result == DialogResult.OK)
                 {
-                    System.IO.File.WriteAllText(SaveFileDialog_Glyphs.FileName, result_text);
+                    File.WriteAllText(SaveFileDialog_Glyphs.FileName, result_text);
                 }
             }
         }
 
-        private void Button_ExportPNG_Click(object sender, EventArgs e)
+        private void Button_ExportSprite_Click(object sender, EventArgs e)
         {
             if (result_bitmap != null)
             {
-                SaveFileDialog_Sprite.FileName = string.Format("{0} {1} {2}_strip{3}.png", result_font.Name, result_font.Size, result_font.Style.ToString(), result_text.Length);
+                SaveFileDialog_Sprite.FileName = string.Format("{0} {1} {2}_strip{3}", result_font.Name, result_font.Size, result_font.Style.ToString(), result_text.Length);
                 DialogResult result = SaveFileDialog_Sprite.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    result_bitmap.Save(SaveFileDialog_Sprite.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    switch(SaveFileDialog_Sprite.FilterIndex)
+                    {
+                        default:
+                        case 1:
+                            try
+                            {
+                                result_bitmap.Save(SaveFileDialog_Sprite.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show("Fail to Export Font Sprite");
+                            }
+                            break;
+                        case 2:
+                            FileStream fs = new FileStream(SaveFileDialog_Sprite.FileName, FileMode.OpenOrCreate);
+                            GifWriter gifWriter = new GifWriter(fs, 1, 0);
+
+                            string text = TextBox_Glyphs.Text;
+                            string text_largest = " ";
+                            if (TextBox_SpaceGlyph.Text.Length > 0)
+                            {
+                                text_largest = TextBox_SpaceGlyph.Text.Trim().Substring(0, 1);
+                            }
+
+                            int space_h = (int)NumericUpDown_HSpace.Value;
+                            int space_v = (int)NumericUpDown_VSpace.Value;
+
+                            Size size = TextRenderer.MeasureText(text_largest, font);
+                            for (int i = 0; i < text.Length; i++)
+                            {
+                                string s = text.Substring(i, 1);
+                                Size sizes = TextRenderer.MeasureText(s, font);
+
+                                if (size.Width < sizes.Width || size.Height < sizes.Height)
+                                {
+                                    size = sizes;
+                                }
+                            }
+
+                            size.Width = (int)(size.Width * 0.8);
+                            size.Height = (int)(size.Height * 0.8);
+
+                            int width = (space_h * 2) + size.Width;
+                            int height = (space_v * 2) + size.Height;
+
+                            int x = space_h + size.Width / 2;
+                            int y = space_v + size.Height / 2;
+
+                            for (int i = 0; i < text.Length; i++)
+                            {
+                                Bitmap bitmap = new Bitmap(width, height);
+                                Graphics graphics = Graphics.FromImage(bitmap);
+
+                                if (CheckBox_AntiAliasing.Checked)
+                                {
+                                    graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+                                }
+                                else
+                                {
+                                    graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+                                }
+
+                                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                                graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+
+                                graphics.Clear(Color.FromArgb(1, (int)NumericUpDown_BRed.Value, (int)NumericUpDown_BGreen.Value, (int)NumericUpDown_BBlue.Value));
+
+                                StringFormat format = new StringFormat()
+                                {
+                                    Alignment = StringAlignment.Center,
+                                    LineAlignment = StringAlignment.Center
+                                };
+
+                                string s = text.Substring(i, 1);
+
+                                if (s.Equals(" "))
+                                {
+                                    s = TextBox_SpaceGlyph.Text;
+                                }
+
+                                graphics.DrawString(s, font, new SolidBrush(color), x, y, format);
+                                graphics.Flush();
+
+                                gifWriter.WriteFrame(bitmap);
+                                bitmap.Dispose();
+                            }
+                            gifWriter.Dispose();
+                            fs.Close();
+                            break;
+                    }
                 }
             }
         }
@@ -297,5 +386,10 @@ namespace SFGenerator
             }
         }
         #endregion
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

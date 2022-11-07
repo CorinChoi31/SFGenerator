@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ti0lvtOcdal6fWAuYV22a0R4rGz1oB43AoUuV7MW1Zj7UHWPee28xggUtQlTyEMOU02xWeohgDSGM9pSJhb10Q==",
+  "dgSpecHash": "bgSSq/LDpD+cJt70XprQq/buA33W5uhxkEXQMZHlsMJAXzSEnUNqZFkOp9JG/sQRbU776zYDI8K7pFyRJRc0Yg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\corin\\Desktop\\Storage\\[Projects]\\C#\\SFGenerator\\SFGenerator\\SFGenerator.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\corin\\Documents\\GitHub\\SFGenerator\\SFGenerator\\SFGenerator\\SFGenerator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\corin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

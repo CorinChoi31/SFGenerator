@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "s/LQxX3YBozMaVNHVvM1FoBjR5xR3RXLhl/E5unT7wd35UxMByxMDtD2RzOzOcKrSCPKabDFSlfnPsRFO36lTg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\corin\\Documents\\GitHub\\SFGenerator\\SFGenerator\\SFGenerator\\SFGenerator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\corin\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\5.0.13\\microsoft.netcore.app.host.win-x86.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\corin\\Desktop\\Storage\\[Projects]\\C#\\SFGenerator\\SFGenerator\\SFGenerator.csproj",
+      "projectUniqueName": "C:\\Users\\corin\\Documents\\GitHub\\SFGenerator\\SFGenerator\\SFGenerator\\SFGenerator.csproj",
       "projectName": "SFGenerator",
-      "projectPath": "C:\\Users\\corin\\Desktop\\Storage\\[Projects]\\C#\\SFGenerator\\SFGenerator\\SFGenerator.csproj",
+      "projectPath": "C:\\Users\\corin\\Documents\\GitHub\\SFGenerator\\SFGenerator\\SFGenerator\\SFGenerator.csproj",
       "packagesPath": "C:\\Users\\corin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\corin\\Desktop\\Storage\\[Projects]\\C#\\SFGenerator\\SFGenerator\\obj\\",
+      "outputPath": "C:\\Users\\corin\\Documents\\GitHub\\SFGenerator\\SFGenerator\\SFGenerator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,6 +60,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.13, 5.0.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -68,7 +74,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

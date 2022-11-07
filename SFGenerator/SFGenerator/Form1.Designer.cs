@@ -36,7 +36,7 @@ namespace SFGenerator
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.Button_ExportGlyph = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.Button_ExportPNG = new System.Windows.Forms.Button();
+            this.Button_ExportSprite = new System.Windows.Forms.Button();
             this.Panel_Preview = new System.Windows.Forms.Panel();
             this.PictureBox_Preview = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -162,7 +162,7 @@ namespace SFGenerator
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.Controls.Add(this.Button_ExportGlyph, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.Button_ExportPNG, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.Button_ExportSprite, 2, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 263);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -199,19 +199,19 @@ namespace SFGenerator
     "glyph to the space size.\r\n(The space glyph only affects the size of whatever it " +
     "is, and is always transparent.)";
             // 
-            // Button_ExportPNG
+            // Button_ExportSprite
             // 
-            this.Button_ExportPNG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Button_ExportSprite.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_ExportPNG.Enabled = false;
-            this.Button_ExportPNG.Location = new System.Drawing.Point(738, 3);
-            this.Button_ExportPNG.Name = "Button_ExportPNG";
-            this.Button_ExportPNG.Size = new System.Drawing.Size(125, 28);
-            this.Button_ExportPNG.TabIndex = 11;
-            this.Button_ExportPNG.Text = "Export Sprite";
-            this.Button_ExportPNG.UseVisualStyleBackColor = true;
-            this.Button_ExportPNG.Click += new System.EventHandler(this.Button_ExportPNG_Click);
+            this.Button_ExportSprite.Enabled = false;
+            this.Button_ExportSprite.Location = new System.Drawing.Point(738, 3);
+            this.Button_ExportSprite.Name = "Button_ExportSprite";
+            this.Button_ExportSprite.Size = new System.Drawing.Size(125, 28);
+            this.Button_ExportSprite.TabIndex = 11;
+            this.Button_ExportSprite.Text = "Export Sprite";
+            this.Button_ExportSprite.UseVisualStyleBackColor = true;
+            this.Button_ExportSprite.Click += new System.EventHandler(this.Button_ExportSprite_Click);
             // 
             // Panel_Preview
             // 
@@ -691,6 +691,11 @@ namespace SFGenerator
             this.NumericUpDown_HSpace.Name = "NumericUpDown_HSpace";
             this.NumericUpDown_HSpace.Size = new System.Drawing.Size(275, 23);
             this.NumericUpDown_HSpace.TabIndex = 6;
+            this.NumericUpDown_HSpace.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             // 
             // NumericUpDown_VSpace
             // 
@@ -699,6 +704,11 @@ namespace SFGenerator
             this.NumericUpDown_VSpace.Name = "NumericUpDown_VSpace";
             this.NumericUpDown_VSpace.Size = new System.Drawing.Size(275, 23);
             this.NumericUpDown_VSpace.TabIndex = 7;
+            this.NumericUpDown_VSpace.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             // 
             // tableLayoutPanel7
             // 
@@ -741,7 +751,7 @@ namespace SFGenerator
             // SaveFileDialog_Sprite
             // 
             this.SaveFileDialog_Sprite.DefaultExt = "png";
-            this.SaveFileDialog_Sprite.Filter = "무손실 압축 이미지|*.png";
+            this.SaveFileDialog_Sprite.Filter = "저용량 폰트 이미지|*.png|대용량 폰트 이미지|*.gif";
             this.SaveFileDialog_Sprite.RestoreDirectory = true;
             // 
             // ColorDialog
@@ -790,7 +800,8 @@ namespace SFGenerator
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(182, 22);
-            this.toolStripMenuItem3.Text = "Version: 1.0";
+            this.toolStripMenuItem3.Text = "Version: 1.01";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -852,11 +863,10 @@ namespace SFGenerator
         private System.Windows.Forms.TextBox TextBox_Glyphs;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button Button_ImportFromFile;
-        private System.Windows.Forms.Button Button_Apply;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Button Button_ExportPNG;
+        private System.Windows.Forms.Button Button_ExportSprite;
         private System.Windows.Forms.Button Button_ExportGlyph;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
@@ -896,6 +906,7 @@ namespace SFGenerator
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Button Button_GlyphsRefresh;
+        private System.Windows.Forms.Button Button_Apply;
     }
 }
 

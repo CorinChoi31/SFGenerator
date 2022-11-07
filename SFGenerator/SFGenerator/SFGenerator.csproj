@@ -9,6 +9,7 @@
     <Company>Corssoft</Company>
     <Authors>Corin Choi</Authors>
     <StartupObject>SFGenerator.Program</StartupObject>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

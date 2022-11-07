@@ -1,0 +1,17 @@
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\bin\Release\net5.0-windows\win-x86\SFGenerator.exe
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\bin\Release\net5.0-windows\win-x86\SFGenerator.deps.json
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\bin\Release\net5.0-windows\win-x86\SFGenerator.runtimeconfig.json
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\bin\Release\net5.0-windows\win-x86\SFGenerator.runtimeconfig.dev.json
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\bin\Release\net5.0-windows\win-x86\SFGenerator.dll
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\bin\Release\net5.0-windows\win-x86\ref\SFGenerator.dll
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.csproj.AssemblyReference.cache
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.Form_Main.resources
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.Properties.Resources.resources
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.csproj.GenerateResource.cache
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.AssemblyInfoInputs.cache
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.AssemblyInfo.cs
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.csproj.CoreCompileInputs.cache
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.dll
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\ref\SFGenerator.dll
+C:\Users\corin\Documents\GitHub\SFGenerator\SFGenerator\SFGenerator\obj\Release\net5.0-windows\win-x86\SFGenerator.genruntimeconfig.cache
